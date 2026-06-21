@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>DEVANSH TOOLS</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:sans-serif;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+background:linear-gradient(
+-45deg,
+#000000,
+#001d3d,
+#003566,
+#7209b7,
+#ff006e,
+#00b4d8
+);
+
+background-size:600% 600%;
+
+animation:bg 10s ease infinite;
+
+transition:.5s;
+
+}
+
+@keyframes bg{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* STARS */
+
+.stars{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+radial-gradient(
+white 1px,
+transparent 1px
+);
+
+background-size:
+
+30px 30px;
+
+opacity:.4;
+
+animation:
+
+moveStars 20s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes moveStars{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-500px);
+
+}
+
+}
+
+/* FLOATING CIRCLES */
+
+.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:
+
+rgba(255,255,255,.1);
+
+animation:
+
+float 12s linear infinite;
+
+}
+
+.circle:nth-child(2){
+
+width:120px;
+
+height:120px;
+
+top:10%;
+
+left:10%;
+
+}
+
+.circle:nth-child(3){
+
+width:70px;
+
+height:70px;
+
+right:10%;
+
+bottom:20%;
+
+}
+
+.circle:nth-child(4){
+
+width:160px;
+
+height:160px;
+
+left:5%;
+
+bottom:5%;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:
+
+translateY(0)
+
+rotate(0deg);
+
+}
+
+100%{
+
+transform:
+
+translateY(-700px)
+
+rotate(360deg);
+
+}
+
+}
+
+/* CARD */
+
+.box{
+
+width:92%;
+
+max-width:390px;
+
+padding:25px;
+
+border-radius:30px;
+
+background:
+
+rgba(255,255,255,.08);
+
+backdrop-filter:
+
+blur(20px);
+
+border:
+
+1px solid
+
+rgba(255,255,255,.2);
+
+text-align:center;
+
+box-shadow:
+
+0 0 25px
+
+rgba(0,255,255,.4),
+
+0 0 50px
+
+rgba(138,43,226,.3);
+
+animation:
+
+cardFloat 4s infinite ease-in-out;
+
+}
+
+@keyframes cardFloat{
+
+0%,100%{
+
+transform:
+
+translateY(0);
+
+}
+
+50%{
+
+transform:
+
+translateY(-8px);
+
+}
+
+}
+
+/* IMAGE */
+
+.anime{
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+border:4px solid #fff;
+
+object-fit:cover;
+
+margin-bottom:15px;
+
+}
+
+/* TITLE */
+
+h1{
+
+color:#fff;
+
+font-size:30px;
+
+margin-bottom:20px;
+
+text-shadow:
+
+0 0 10px #fff,
+
+0 0 20px #00ffff;
+
+}
+
+/* BUTTON */
+
+.btn{
+
+position:relative;
+
+overflow:hidden;
+
+display:block;
+
+width:100%;
+
+padding:16px;
+
+margin:14px 0;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+color:#fff;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:
+
+translateY(-4px)
+
+scale(1.03);
+
+}
+
+.btn::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:60%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.8),
+
+transparent
+
+);
+
+transform:
+
+skewX(-25deg);
+
+animation:
+
+shine 3s infinite;
+
+}
+
+@keyframes shine{
+
+100%{
+
+left:150%;
+
+}
+
+}
+
+.tg{
+
+background:#229ED9;
+
+}
+
+.tools{
+
+background:#ff9800;
+
+}
+
+.file{
+
+background:#22c55e;
+
+}
+
+.sketch{
+
+background:#e91e63;
+
+}
+
+.footer{
+
+margin-top:18px;
+
+font-size:14px;
+
+color:#fff;
+
+}
+
+/* MUSIC MODE */
+
+.music-mode{
+
+filter:
+
+brightness(1.2)
+
+saturate(2);
+
+animation:
+
+bg 3s infinite;
+
+}
+
+.music-mode .box{
+
+animation:
+
+pulse .8s infinite;
+
+box-shadow:
+
+0 0 20px #00ffff,
+
+0 0 50px #8e2de2,
+
+0 0 80px #00ffff;
+
+}
+
+.music-mode h1{
+
+animation:
+
+glow 1s infinite alternate;
+
+}
+
+.music-mode .btn{
+
+animation:
+
+bounce 1s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.03);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-5px);
+
+}
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:
+
+0 0 10px #fff,
+
+0 0 20px #00ffff;
+
+}
+
+to{
+
+text-shadow:
+
+0 0 20px #fff,
+
+0 0 40px #8e2de2,
+
+0 0 60px #00ffff;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="circle"></div>
+
+<div class="circle"></div>
+
+<div class="circle"></div>
+
+<div class="box">
+
+<img class="anime"
+
+src="https://i.imgur.com/0y0y0y0.png">
+
+<h1>
+
+⚡ DEVANSH TOOLS ⚡
+
+</h1>
+
+<button class="btn tg"
+
+onclick="window.open('YOUR_TELEGRAM_LINK')">
+
+📢 Telegram Channel Join
+
+</button>
+
+<button class="btn tools"
+
+onclick="window.open('YOUR_TOOLS_LINK')">
+
+🛠️ Tools Channel Join
+
+</button>
+
+<button class="btn file"
+
+onclick="window.open('YOUR_FILE_LINK')">
+
+🔗 File Link
+
+</button>
+
+<button class="btn sketch"
+
+onclick="window.open('YOUR_SKETCHWARE_LINK')">
+
+📱 Sketchware App Link
+
+</button>
+
+<div class="footer">
+
+DEVANSH_OFFICIAL_302
+
+</div>
+
+</div>
+
+<audio id="bgMusic" autoplay loop>
+
+<source src="https://www.image2url.com/r2/default/videos/1782024299982-1ecad311-6606-420d-9fbc-b5ca793753af.mp4" type="audio/mp4">
+
+</audio>
+
+<script>
+
+const music=
+
+document.getElementById(
+
+"bgMusic"
+
+);
+
+function startMusic(){
+
+music.play()
+
+.catch(()=>{});
+
+}
+
+music.addEventListener(
+
+"play",
+
+()=>{
+
+document.body
+
+.classList
+
+.add(
+
+"music-mode"
+
+);
+
+}
+
+);
+
+music.addEventListener(
+
+"pause",
+
+()=>{
+
+document.body
+
+.classList
+
+.remove(
+
+"music-mode"
+
+);
+
+}
+
+);
+
+window.addEventListener(
+
+"load",
+
+startMusic
+
+);
+
+document.addEventListener(
+
+"click",
+
+startMusic,
+
+{once:true}
+
+);
+
+document.addEventListener(
+
+"touchstart",
+
+startMusic,
+
+{once:true}
+
+);
+
+</script>
+
+</body>
+
+</html>
